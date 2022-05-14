@@ -36,7 +36,7 @@ export default class Login extends Component {
       password: this.state.password,
       
     }
-    axios.post(`${REACT_APP_PROD_API}/login`, data)
+    axios.post(`${devENV ? REACT_APP_DEV_API : REACT_APP_PROD_API}/login`, data)
           .then( response => {
             let token = response.data.token;
             console.log(token);
